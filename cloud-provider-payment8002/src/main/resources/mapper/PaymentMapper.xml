@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winky.springcloud.mapper.PaymentMapper">
+    <insert id="create" parameterType="com.winky.springcloud.entities.Payment" useGeneratedKeys="true">
+        INSERT INTO payment(serial) values(#{serial});
+    </insert>
+    <select id="getPaymentID" parameterType="long" resultType="com.winky.springcloud.entities.Payment">
+        select * from payment where id = #{id};
+    </select>
+
+</mapper>
